@@ -1,0 +1,75 @@
+/*初始化一系列样式(图片，warning，error，danger，normal，button)*/
+.warning{
+  color: #ff731f;
+  font-weight: bold;
+}
+.price{
+  color: #e8e8e8;//**
+}
+.danger{
+  color: red;
+}
+.normal{
+  color: #535353;
+}
+.green{
+  color:#00c36a;
+}
+$baseColor:#eb303e;
+/*
+ *圆角mixins
+ *params radius deg
+ */
+@mixin border-radius($radius:5px){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin element-transition(){
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+  -ms-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+@mixin box-shadow($x,$y,$size,$color,$inset){
+  -webkit-box-shadow:$x $y $size $color $inset;
+  -moz-box-shadow:$x $y $size $color $inset;
+  -o-box-shadow:$x $y $size $color $inset;
+  -ms-box-shadow:$x $y $size $color $inset;
+  box-shadow:$x $y $size $color $inset;
+}
+@mixin box-shadow-outset($x,$y,$size,$area,$color){
+  -webkit-box-shadow:$x $y $size $area $color;
+  -moz-box-shadow:$x $y $size $area $color;
+  -o-box-shadow:$x $y $size $area $color;
+  -ms-box-shadow:$x $y $size $area $color;
+  box-shadow:$x $y $size $area $color;
+}
+@mixin box-sizing(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin ellipsis($rows:2){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+}
+@mixin ellipsis_1(){
+  word-wrap: break-word;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@function rem($px, $rootSize: 75) {
+  @return $px / $rootSize + rem;
+};
+

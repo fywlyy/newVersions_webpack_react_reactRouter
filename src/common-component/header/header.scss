@@ -1,0 +1,14 @@
+@function rem($px, $rootSize: 75) {
+  @return $px / $rootSize + rem;
+};
+$baseColor:#eb303e;
+.header-layout{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:rem(100);
+	line-height:rem(100);
+	text-align: center;
+	background-color: $baseColor;
+}

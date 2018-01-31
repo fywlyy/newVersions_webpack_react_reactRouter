@@ -1,0 +1,52 @@
+@function rem($px, $rootSize: 75) {
+  @return $px / $rootSize + rem;
+};
+.home-page{
+	padding-bottom:rem(100);
+	.form-module{
+		p{
+			margin-top:rem(20);
+			padding:0 rem(30);
+			.title{
+				display:inline-block;
+				margin-right:rem(20);
+				width:rem(180);
+				text-align:right;
+				font-size:rem(28);
+			}
+			input{
+				width:rem(480);
+			}
+		}		
+	}
+	.btn-module{
+		padding:rem(60) rem(30);
+		.btn{
+			width:100%;
+		}
+	}
+	.user-list-title{
+		height:rem(80);
+		padding-left:rem(30);
+		border-top:1px solid #e0e0e0;
+		border-bottom:1px solid #e0e0e0;
+		line-height: rem(80);
+		font-size:rem(32);
+		background-color: #ccc;
+	}
+	.user-list{		
+		li{
+			&:first-child{
+				border-top:1px solid #e0e0e0;
+			}
+			border-bottom:1px solid #e0e0e0;
+			span{
+				width:100%;
+				height:rem(60);
+				line-height: rem(60);
+				text-align: center;
+				font-size:rem(28);
+			}
+		}
+	}
+}
