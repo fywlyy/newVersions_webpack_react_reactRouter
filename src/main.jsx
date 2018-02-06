@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route} from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loading from './common-component/loading/loading.jsx';
 import Bottom from './common-component/bottom/bottom.jsx';
@@ -12,11 +12,13 @@ const HomePage = Loadable({loader: () => import(/* webpackChunkName: "homePage" 
 const Login = Loadable({loader: () => import(/* webpackChunkName: "Login" */'./common-component/login/login.jsx'),loading: Loading});
 
 ReactDOM.render(
-    <BrowserRouter>
-        <div>
-            <Route path="/" component={HomePage}/>
-            <Route path="/login" component={Login}/>            
-        </div>                 
-    </BrowserRouter>, 
+    <HashRouter>
+    	<div>
+			<Switch>
+	            <Route exact path="/" component={HomePage}/>
+	            <Route path="/login/:testInfo?/:id?" component={Login}/>            
+	        </Switch>
+    	</div>	                        
+    </HashRouter>, 
     document.getElementById('app-container')
 );

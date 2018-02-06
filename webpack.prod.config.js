@@ -13,7 +13,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './built'),
     filename: 'js/[name].[chunkhash].js?',
-    chunkFilename: 'js/[name].[chunkhash].js?'
+    chunkFilename: 'js/[name].[chunkhash].js?',
+    publicPath: '/built/'
   },
   resolve: {
     modules: [ 'node_modules' ],
