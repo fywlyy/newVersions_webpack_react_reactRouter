@@ -90,6 +90,14 @@ module.exports = {
       minChunks: 2
     }),
     new ExtractTextPlugin({ filename: 'css/[name].[contenthash:5].css', allChunks: true }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
+    }),
     new CleanWebpackPlugin(
       ['built/*'],　 //匹配删除的文件
       {
