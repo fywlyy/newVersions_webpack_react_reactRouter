@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/main.jsx',
-    vendors:['react','react-dom']
+    vendors:['react','react-dom','react-router-dom']
   },
   output: {
     path: path.resolve(__dirname, './built'),

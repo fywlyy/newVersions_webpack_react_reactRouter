@@ -98,6 +98,7 @@ module.exports = {
         comments: false
       }
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new CleanWebpackPlugin(
       ['built/*'],　 //匹配删除的文件
       {
