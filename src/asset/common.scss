@@ -1,20 +1,3 @@
-/*初始化一系列样式(图片，warning，error，danger，normal，button)*/
-.warning{
-  color: #ff731f;
-  font-weight: bold;
-}
-.price{
-  color: #e8e8e8;//**
-}
-.danger{
-  color: red;
-}
-.normal{
-  color: #535353;
-}
-.green{
-  color:#00c36a;
-}
 $baseColor:#eb303e;
 /*
  *圆角mixins

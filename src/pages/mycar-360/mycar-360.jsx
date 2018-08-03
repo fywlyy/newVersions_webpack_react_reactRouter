@@ -1,31 +1,33 @@
 import React from 'react';
 import API from '../../api/api.js';
 import Util from '../../common-component/util/util.js';
-
 import Header from '../../common-component/header/header.jsx';
 
-import './home-page.scss';
+import './mycar-360.scss';
 
-class HomePage extends React.Component{
+class SphereViewer extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-
-        }
     }
-    handleLogin(e) {
 
-        this.props.history.push("/login");
+    componentDidMount() {
+        $("#myCar").vc3dEye({
+            imagePath:"/src/asset/images/mycar_img/",
+            totalImages:51,
+            imageExtension:"png"
+        });
     }
+
     render() {
-    	let { userList } = this.state;
         return(
             <div className="container hasFixed home-page">
                 <Header />
-                <div className="btn-module"><button type="button" className="btn primary" onClick={(e) => this.handleLogin(e)}>登陆</button></div>
+                <div className="my-car" id="myCar">
+
+                </div>                
             </div>
         );
     }
 }
 
-export default HomePage;
+export default SphereViewer;

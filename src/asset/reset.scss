@@ -28,6 +28,24 @@ html,body{height:100%;background-color: #f9f9f9;}
 .clearFix:after { clear: both; }
 .clearFix { *zoom: 1; }
 
+/*初始化一系列样式(图片，warning，error，danger，normal，button)*/
+.warning{
+    color: #ff731f;
+    font-weight: bold;
+}
+.price{
+    color: #e8e8e8;//**
+}
+.danger{
+    color: red;
+}
+.normal{
+    color: #535353;
+}
+.green{
+    color:#00c36a;
+}
+
 input[type="text"]{
   max-width:100%;
   height:rem(80);
