@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w --config webpack.dev.config.js  --color --progress",
+    "start": "concurrently \"webpack -w --config webpack.dev.config.js  --color --progress\" \"http-server -p 8090 .\"",
     "prod": "webpack -p --config webpack.prod.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^3.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
@@ -19,6 +20,7 @@
     "webpack-dev-server": "^2.9.7"
   },
   "devDependencies": {
+    "@handsontable/react": "^1.1.0",
     "autoprefixer": "^7.2.3",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
@@ -31,8 +33,10 @@
     "bundle-loader": "^0.5.5",
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.7",
+    "emoji-mart": "^2.8.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
+    "handsontable": "^5.0.1",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",
@@ -41,7 +45,8 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^1.1.5",
-    "url-loader": "^0.6.2"
+    "url-loader": "^0.6.2",
+    "yuki-createjs": "^0.0.3"
   },
   "browserslist": [
     "defaults",

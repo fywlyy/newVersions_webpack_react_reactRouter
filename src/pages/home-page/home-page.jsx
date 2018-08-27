@@ -1,6 +1,8 @@
 import React from 'react';
 import API from '../../api/api.js';
 import Util from '../../common-component/util/util.js';
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
 
 import Header from '../../common-component/header/header.jsx';
 
@@ -22,6 +24,7 @@ class HomePage extends React.Component{
         return(
             <div className="container hasFixed home-page">
                 <Header />
+                <Picker set='emojione' />
                 <div className="btn-module"><button type="button" className="btn primary" onClick={(e) => this.handleLogin(e)}>登陆</button></div>
             </div>
         );

@@ -30,19 +30,19 @@ class SphereViewer extends React.Component{
     }
 
     componentDidMount() {
-        this.renderViewer();
+        this.renderViewer(0, -Math.PI/10, -Math.PI/2);
     }
 
-    renderViewer() {
+    renderViewer(index,initLat,initLong) {
         let _this = this,
             { mycarArr } = this.state,	
             $canvasBox = $("#canvas-box");
 
         this.PSV = this.initPhotoSphereViewer({
             containerEl: $canvasBox[0],
-            imgUrl: mycarArr[0].imgUrl,
-            lat: -Math.PI/10,
-            long: -Math.PI/2
+            imgUrl: mycarArr[index].imgUrl,
+            lat: initLat,
+            long: initLong
         },function(lt,lg) {
             _this.lat = lt;
             _this.long = lg;
@@ -52,8 +52,6 @@ class SphereViewer extends React.Component{
     }
 
     initPhotoSphereViewer(options,rotateCb) {
-        let $loader = $("<div className='loader'></div>");
-
         return new PhotoSphereViewer({
             autoload: false,
             // Path to the panorama
@@ -104,9 +102,7 @@ class SphereViewer extends React.Component{
     }
 
     handleSwitch(index) {
-        let _this = this;
         let $canvasBox = $("#canvas-box");
-        let { mycarArr } = this.state;
 
         if(this.colorIndex == index){
             return;
@@ -119,17 +115,7 @@ class SphereViewer extends React.Component{
         $canvasBox.html('');
         this.colorIndex = index;
 
-        this.PSV = this.initPhotoSphereViewer({
-            containerEl: $canvasBox[0],
-            imgUrl: mycarArr[index].imgUrl,
-            lat: this.lat,
-            long: this.long
-        },function(lt,lg) {
-            _this.lat = lt;
-            _this.long = lg;
-        });
-        
-        this.PSV.load();
+        this.renderViewer(index, this.lat, this.long);
     }
 
     render() {
